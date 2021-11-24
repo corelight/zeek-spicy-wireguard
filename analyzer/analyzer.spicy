@@ -1,0 +1,7 @@
+# TODO: Define your analyzers here.
+
+module zeek_spicy_wireguard;
+
+public type Wireguard = unit {
+    payload: bytes &eod;
+};
