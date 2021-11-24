@@ -36,6 +36,10 @@ This is a straightforward implementation following https://www.wireguard.com/pro
 #close	2021-11-24-18-10-11
 ```
 
+## PCAP Source:
+
+- wireguard.pcap (self-made)
+
 This package also detects...
 
 # Tailscale
@@ -60,3 +64,7 @@ Relevant code section: <https://github.com/tailscale/tailscale/blob/main/disco/d
 1623328901.893092	CHhAvVGS1DHFjwGM9	192.168.88.3	41641	18.196.71.179	41641	udp	spicy_tailscale	31.882638	5700	6322	SF	-	-	0	Dd	51	7128	56	7890	-
 #close	2021-11-24-18-11-40
 ```
+
+## PCAP Source:
+
+- tailscale_linux.pcap (self-made)
