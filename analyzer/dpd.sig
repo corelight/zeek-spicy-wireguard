@@ -1,7 +1,11 @@
-# TODO: Use this file to optionally declare signatures which can be used to activate your analyzers.
-#
-# signature dpd_Wireguard {
-#     ip-proto == tcp
-#     payload /^\x11\x22\x33\x44/
-#     enable "spicy_Wireguard"
-# }
+signature wireguard_packet {
+  ip-proto == udp
+  payload /^(\x01|\x02|\x03)\x00\x00\x00/
+  enable "spicy_Wireguard"
+}
+
+signature tailscale_packet {
+  ip-proto == udp
+  payload /^\x54\x53\xf0\x9f\x92\xac/
+  enable "spicy_Tailscale"
+}

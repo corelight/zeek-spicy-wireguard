@@ -5,11 +5,26 @@ module Zeek_zeek_spicy_wireguard;
 import zeek_spicy_wireguard;
 import zeek;
 
-# TODO: For DPD, protocol analyzers should confirm or reject a protocol.
-# on zeek_spicy_wireguard::Wireguard::%done {
-#     zeek::confirm_protocol();
-# }
-#
-# on zeek_spicy_wireguard::Wireguard::%error {
-#     zeek::reject_protocol("error while parsing Wireguard record");
-# }
+on zeek_spicy_wireguard::HandshakeInitiation::%done {
+	zeek::confirm_protocol();
+}
+
+on zeek_spicy_wireguard::HandshakeResponse::%done {
+	zeek::confirm_protocol();
+}
+
+on zeek_spicy_wireguard::PacketCookieReply::%done {
+	zeek::confirm_protocol();
+}
+
+on zeek_spicy_wireguard::WireGuardPacket::%error {
+	zeek::reject_protocol("error while parsing Wireguard packet");
+}
+
+on zeek_spicy_wireguard::TailscalePacket::%done {
+	zeek::confirm_protocol();
+}
+
+on zeek_spicy_wireguard::TailscalePacket::%error {
+	zeek::reject_protocol("error while parsing Tailscale packet");
+}
