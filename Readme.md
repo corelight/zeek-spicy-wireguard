@@ -1,14 +1,16 @@
 # zeek-spicy-wireguard
 
 This package provides a Spicy based Wireguard protocol analyzer
-for Zeek.  
+for Zeek.
 
 You must install [Spicy](https://docs.zeek.org/projects/spicy/en/latest/)
 to use this package.
 
-This is a straightforward implementation following https://www.wireguard.com/protocol/
+This is a straightforward implementation following <https://www.wireguard.com/protocol/>
 
-## Example Logs:
+## Wireguard
+
+### Wireguard Logs
 
 ```
 #separator \x09
@@ -36,13 +38,13 @@ This is a straightforward implementation following https://www.wireguard.com/pro
 #close	2021-11-24-18-10-11
 ```
 
-## PCAP Source:
+### Wireguard PCAP Source
 
 - wireguard.pcap (self-made)
 
 This package also detects...
 
-# Tailscale
+## Tailscale
 
 [Tailscale](https://tailscale.com/) is a VPN that modifies the Wireguard protocol
 slightly by adding Tailscale discovery messages.  While the generic Wireguard protocol
@@ -50,7 +52,7 @@ analyzer in this repo will not support this, this protocol analyzer will.
 
 Relevant code section: <https://github.com/tailscale/tailscale/blob/main/disco/disco.go#L32>
 
-## Example Log:
+### Tailscale Logs
 
 ```
 #separator \x09
@@ -65,6 +67,6 @@ Relevant code section: <https://github.com/tailscale/tailscale/blob/main/disco/d
 #close	2021-11-24-18-11-40
 ```
 
-## PCAP Source:
+### Tailscale PCAP Source
 
 - tailscale_linux.pcap (self-made)
