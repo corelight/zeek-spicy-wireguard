@@ -19,7 +19,7 @@ export {
 		### Set to true if we think that a handshake was succesfully performed.
 		### Please note that this flag is a bit speculative and should not be 100% relied on.
 		established:    bool            &log &default=F;
-		## Number of handshake initiation packets we have encountered during the connection
+		## Number of handshake initiation packets encountered during the connection
 		initiations:    count           &log &default=0;
 		## Number of handshake response packets we have encountered during the connection
 		responses:      count           &log &default=0;
