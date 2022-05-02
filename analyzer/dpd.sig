@@ -1,6 +1,6 @@
 signature wireguard_packet {
   ip-proto == udp
-  payload /^(\x01|\x02|\x03)\x00\x00\x00.{34}/
+  payload /^(\x01|\x02|\x03)\x00\x00\x00.{144}/
   enable "spicy_Wireguard"
 }
 
