@@ -3,6 +3,8 @@ module Wireguard;
 export {
 	redef enum Log::ID += { LOG };
 
+	global log_policy: Log::PolicyHook;
+
 	## The record type which contains the fields of the Wireguard log.
 	## Wireguard purposefully contains only very limited information. As such, the only
 	## things that we record in the log are wireguard handshakes - since the frequency of handshakes
@@ -67,7 +69,7 @@ function set_session(c: connection)
 
 event zeek_init() &priority=5
 	{
-	Log::create_stream(Wireguard::LOG, [$columns=Info, $ev=log_wireguard, $path="wireguard"]);
+	Log::create_stream(Wireguard::LOG, [$columns=Info, $ev=log_wireguard, $path="wireguard", $policy=log_policy]);
 	}
 
 event Wireguard::handshake_initiation(c: connection, is_orig: bool, sender_index: count, unencrypted_ephemeral: string, encrypted_static: string, encrypted_timestamp: string, mac1: string, mac2: string)
