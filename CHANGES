@@ -1,2 +1,3 @@
+v0.1.2:		Added log policy hooks.
 v0.1.1:		Improved signature based on live traffic analysis.
 v0.1.0:		Initial version.
