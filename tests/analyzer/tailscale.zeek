@@ -1,5 +1,6 @@
 # @TEST-EXEC: zeek -C -r ${TRACES}/tailscale_linux.pcap %INPUT
-# @TEST-EXEC: btest-diff conn.log
+# @TEST-EXEC: cat conn.log | zeek-cut -m -n local_orig local_resp >conn.log.filtered
+# @TEST-EXEC: btest-diff conn.log.filtered
 # @TEST-EXEC: btest-diff .stdout
 #
 # @TEST-DOC: Test Tailscale analyzer with sample trace.

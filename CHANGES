@@ -1,3 +1,4 @@
+v0.1.4:     Make Zeek v6 ready.
 v0.1.3:		Make ready for Zeek v5.
 v0.1.2:		Added log policy hooks.
 v0.1.1:		Improved signature based on live traffic analysis.

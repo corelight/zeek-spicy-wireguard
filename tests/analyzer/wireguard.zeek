@@ -1,5 +1,6 @@
 # @TEST-EXEC: zeek -C -r ${TRACES}/wireguard.pcap %INPUT
-# @TEST-EXEC: btest-diff conn.log
+# @TEST-EXEC: cat conn.log | zeek-cut -m -n local_orig local_resp >conn.log.filtered
+# @TEST-EXEC: btest-diff conn.log.filtered
 # @TEST-EXEC: btest-diff wireguard.log
 # @TEST-EXEC: btest-diff .stdout
 
