@@ -1,5 +1,4 @@
 [package]
-summary = A Wireguard VPN protocol analyzer, based on Spicy.
 description = A Wireguard VPN protocol analyzer, based on Spicy.
 script_dir = analyzer
 plugin_dir = build/spicy-modules

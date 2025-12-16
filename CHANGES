@@ -1,3 +1,4 @@
+v0.1.8:     Remove summary from zkg.meta.
 v0.1.7:     Renamed _magic variable.
 v0.1.6:     Fixed some testing scripts.
 v0.1.5:     Make v7.1 ready.
