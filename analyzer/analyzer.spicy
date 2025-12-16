@@ -65,9 +65,9 @@ type PacketData = unit {
 
 public type TailscalePacket = unit {
 	magic: bytes &size=1 {
-		local _magic = $$.to_uint(spicy::ByteOrder::Big);
-		self.has_discovery = _magic == 0x54;
-		self.has_wireguard = _magic == 0x01 || _magic == 0x02 || _magic == 0x03 || _magic == 0x04;
+		local my_magic = $$.to_uint(spicy::ByteOrder::Big);
+		self.has_discovery = my_magic == 0x54;
+		self.has_wireguard = my_magic == 0x01 || my_magic == 0x02 || my_magic == 0x03 || my_magic == 0x04;
 
 		if (self.has_wireguard) {
 			self.data.connect(new WireGuardPacket);
